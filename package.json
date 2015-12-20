@@ -1,11 +1,8 @@
 {
-  "name": "mad-webpack-gulp",
-  "version": "0.0.0",
+  "name": "week-success",
+  "version": "0.0.1",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "martindanielson",
+  "author": "kozzztya",
   "license": "MIT",
   "dependencies": {
     "alt": "^0.18.1",

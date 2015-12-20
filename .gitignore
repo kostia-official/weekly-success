@@ -3,4 +3,8 @@ bower_components/
 lib/
 www/*
 
-.idea
+.idea/
+
+hooks/
+platforms/
+plugins/
