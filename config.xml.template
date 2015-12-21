@@ -7,7 +7,7 @@
   <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-  <content src="http://192.168.88.71:8100"/>
+  <content src="%SRC%"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <plugin name="cordova-plugin-legacy-whitelist" spec="~1.1.1"/>
   <access origin="*"/>
