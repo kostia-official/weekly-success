@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import AppComponent from './components/AppComponent';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import 'nk-css-reset/index.css';
+import './scss/style.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+injectTapEventPlugin();
+
+ReactDOM.render(<AppComponent />, document.getElementById('root'));
