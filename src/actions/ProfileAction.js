@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Alt from '../services/alt';
 var ls = require('local-storage');
 
-class ProfileStore {
+class ProfileAction {
 
   constructor() {
     this.generateActions(
@@ -41,4 +41,4 @@ class ProfileStore {
 
 }
 
-Alt.createActions(ProfileStore, exports);
+Alt.createActions(ProfileAction, exports);

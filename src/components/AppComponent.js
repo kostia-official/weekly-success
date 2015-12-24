@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { AppBar, IconButton, List, TextField, FlatButton } from 'material-ui/lib';
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+import React, { Component, PropTypes } from 'react';
+import { AppBar, TextField, FlatButton } from 'material-ui/lib';
 import _ from 'lodash';
 
-import ProfileStore from '../stores/ProfileStore';
 import ProfileAction from '../actions/ProfileAction';
+import ProfileStore from '../stores/ProfileStore';
+
 import LoginComponent from '../components/LoginComponent';
+import WeekListComponent from '../components/WeekListComponent';
 
 export default class App extends Component {
 
@@ -14,12 +15,12 @@ export default class App extends Component {
   }
 
   state = {
-    profile: {}
+    profile: {},
+    categories: []
   };
 
   componentWillMount() {
     ProfileStore.listen(state => this.setState(state));
-
     ProfileAction.authResolve();
   }
 
@@ -38,17 +39,10 @@ export default class App extends Component {
       <div>
         <AppBar
           title={<span>Weeker</span>}
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
           iconElementRight={<FlatButton onClick={ProfileAction.addPoint.bind(this, this.getPoints())}
           label={'Points: ' +  this.getPoints()}/>}
         />
-        <List className="tasks-list">
-          <TextField
-            hintText="Hint Text (MultiLine)"
-            multiLine={true}
-            fullWidth={true}
-          />
-        </List>
+        <WeekListComponent />
       </div>
     );
   }

@@ -11,10 +11,12 @@
     "local-storage": "^1.4.2",
     "lodash": "^3.10.1",
     "material-ui": "^0.13.4",
+    "moment": "^2.10.6",
     "nk-css-reset": "^1.0.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-tap-event-plugin": "^0.2.1"
+    "react-tap-event-plugin": "^0.2.1",
+    "steed": "^1.1.2"
   },
   "devDependencies": {
     "babel": "^6.3.13",
