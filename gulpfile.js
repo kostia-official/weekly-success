@@ -7,7 +7,8 @@ var runSequence = require('run-sequence');
 
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
-var webpackConfig = require("./webpack.config.js");
+var webpackDevConfig = require("./webpack.development.config.js");
+var webpackProdConfig = require("./webpack.production.config.js");
 var ip = require('ip');
 
 // The development server (the recommended option for development)
@@ -26,17 +27,7 @@ gulp.task("build", ["webpack:build"]);
 
 gulp.task("webpack:build", function (callback) {
   // modify some webpack config options
-  var myConfig = Object.create(webpackConfig);
-  myConfig.plugins = myConfig.plugins.concat(
-    new webpack.DefinePlugin({
-      "process.env": {
-        // This has effect on the react lib size
-        "NODE_ENV": JSON.stringify("production")
-      }
-    }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
-  );
+  var myConfig = Object.create(webpackProdConfig);
 
   // run webpack
   webpack(myConfig, function (err, stats) {
@@ -49,7 +40,7 @@ gulp.task("webpack:build", function (callback) {
 });
 
 // modify some webpack config options
-var myDevConfig = Object.create(webpackConfig);
+var myDevConfig = Object.create(webpackDevConfig);
 myDevConfig.devtool = "sourcemap";
 myDevConfig.debug = true;
 
@@ -69,7 +60,7 @@ gulp.task("webpack:build-dev", function (callback) {
 
 gulp.task("webpack-dev-server", function (callback) {
   // modify some webpack config options
-  var myConfig = Object.create(webpackConfig);
+  var myConfig = Object.create(webpackDevConfig);
   myConfig.devtool = "eval";
   myConfig.debug = true;
 
