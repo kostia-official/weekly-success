@@ -1,8 +1,6 @@
-# Week Success
+# Weekly Success
 
-Week Success is a hybrid mobile app for weekly planning. It was created to try Webpack + React + Cordova stack.
-
-For backend used [Dropbox Datastore API](https://www.dropbox.com/developers-v1/datastore/docs/js).
+Weekly Success is a hybrid mobile app for weekly planning. It was created to try Webpack + React + Cordova stack.
 
 For app env used [Cordova](https://cordova.apache.org) In webview used [React](https://facebook.github.io/react/) with nice components from [Material UI](http://www.material-ui.com).
 As application architecture used [Flux](https://facebook.github.io/flux/) and his implementation by [Alt](http://alt.js.org/).
